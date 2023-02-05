@@ -29,6 +29,7 @@ const Welcome = () => {
     sendTransaction,
     handleChange,
     isLoading,
+    currentBalance,
   } = useContext(TransactionContext);
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,7 +49,7 @@ const Welcome = () => {
           </h1>
           <p className="text-left mt-5 text-white font-light md:w-9/12 w-11/12 text-base">
             Explore the crypto world. Buy and sell cryptocurrencies easily on
-            Krypto.
+            Etherpay.
           </p>
           {!currentAccount && (
             <button
@@ -80,6 +81,9 @@ const Welcome = () => {
                 <BsInfoCircle fontSize={17} color="#fff" />
               </div>
               <div>
+                <p className="text-white font-light text-sm">
+                  {currentBalance ? `${currentBalance} ETH` : "Balance"}
+                </p>
                 <p className="text-white font-light text-sm">
                   {currentAccount ? shortenAddress(currentAccount) : "Address"}
                 </p>

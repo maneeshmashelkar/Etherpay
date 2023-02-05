@@ -21,6 +21,7 @@ const getEthereumContract = () => {
 
 export const TransactionProvider = ({ children }) => {
   const [currentAccount, setCurrentAccount] = useState("");
+  const [currentBalance, setCurrentBalance] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [transactions, setTransactions] = useState([]);
   const [transactionCount, setTransactionCount] = useState(
@@ -67,8 +68,15 @@ export const TransactionProvider = ({ children }) => {
       if (!ethereum) return alert("Please install metamask");
 
       const accounts = await ethereum.request({ method: "eth_accounts" });
-
+      const balance = await ethereum.request({
+        method: "eth_getBalance",
+        params: [accounts[0], "latest"],
+      });
+      // console.log(Number(ethers.utils.formatEther(balance)).toPrecision(4));
       if (accounts.length) {
+        setCurrentBalance(
+          Number(ethers.utils.formatEther(balance)).toPrecision(4)
+        );
         setCurrentAccount(accounts[0]);
         getAllTransactions();
       } else {
@@ -99,6 +107,13 @@ export const TransactionProvider = ({ children }) => {
       const accounts = await ethereum.request({
         method: "eth_requestAccounts",
       });
+      const balance = await ethereum.request({
+        method: "eth_getBalance",
+        params: [accounts[0], "latest"],
+      });
+      setCurrentBalance(
+        Number(ethers.utils.formatEther(balance)).toPrecision(4)
+      );
       setCurrentAccount(accounts[0]);
     } catch (error) {
       console.log(error);
@@ -164,6 +179,8 @@ export const TransactionProvider = ({ children }) => {
         sendTransaction,
         transactions,
         isLoading,
+        getAllTransactions,
+        currentBalance,
       }}
     >
       {children}
