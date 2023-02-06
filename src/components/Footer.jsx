@@ -9,16 +9,40 @@ const Footer = () => {
         </div>
         <div className="flex flex-1 justify-evenly items-center flex-wrap sm:mt-0 mt-5 w-full">
           <p className="text-white text-base text-center mx-2 cursor-pointer">
-            Market
+            <a
+              href="https://ethereum.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ethereum
+            </a>
           </p>
           <p className="text-white text-base text-center mx-2 cursor-pointer">
-            Exchange
+            <a
+              href="https://metamask.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Metamask
+            </a>
           </p>
           <p className="text-white text-base text-center mx-2 cursor-pointer">
-            Tutorials
+            <a
+              href="https://coinmarketcap.com/currencies/ethereum/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Market
+            </a>
           </p>
           <p className="text-white text-base text-center mx-2 cursor-pointer">
-            Wallets
+            <a
+              href="https://www.youtube.com/playlist?list=PL0cYdJcy1bWtORxf3Fp4QNfUPgBcjn7Lv"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Tutorials
+            </a>
           </p>
         </div>
       </div>

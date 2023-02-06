@@ -4,9 +4,9 @@ import { AiOutlineClose } from "react-icons/ai";
 
 import logo from "../../images/logo.png";
 
-const NavbarItem = ({ title, classProps }) => {
-  return <li className={`mx-4 cursor-pointer ${classProps}`}>{title}</li>;
-};
+// const NavbarItem = ({ title, classProps }) => {
+//   return <li className={`mx-4 cursor-pointer ${classProps}`}>{title}</li>;
+// };
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -17,9 +17,45 @@ const Navbar = () => {
         <img src={logo} alt="logo" className="w-32 cursor-pointer" />
       </div>
       <ul className="text-white md:flex hidden list-none flex-row justify-between items-center flex-initial">
-        {["Market", "Exchange", "Tutorials", "Wallets"].map((item, index) => (
+        {/* {["Market", "Exchange", "Tutorials", "Wallets"].map((item, index) => (
           <NavbarItem key={item + index} title={item} />
-        ))}
+        ))} */}
+        <li className={`mx-4 cursor-pointer my-2 text-lg`}>
+          <a
+            href="https://ethereum.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ethereum
+          </a>
+        </li>
+        <li className={`mx-4 cursor-pointer my-2 text-lg`}>
+          <a
+            href="https://metamask.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Metamask
+          </a>
+        </li>
+        <li className={`mx-4 cursor-pointer my-2 text-lg`}>
+          <a
+            href="https://coinmarketcap.com/currencies/ethereum/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Market
+          </a>
+        </li>
+        <li className={`mx-4 cursor-pointer my-2 text-lg`}>
+          <a
+            href="https://www.youtube.com/playlist?list=PL0cYdJcy1bWtORxf3Fp4QNfUPgBcjn7Lv"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tutorials
+          </a>
+        </li>
         {/* <li className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]">
           Login
         </li> */}
@@ -46,7 +82,7 @@ const Navbar = () => {
             <li className="text-xl w-full my-2">
               <AiOutlineClose onClick={() => setToggleMenu(false)} />
             </li>
-            {["Market", "Exchange", "Tutorials", "Wallets"].map(
+            {/* {["Market", "Exchange", "Tutorials", "Wallets"].map(
               (item, index) => (
                 <NavbarItem
                   key={item + index}
@@ -54,7 +90,43 @@ const Navbar = () => {
                   classProps="my-2 text-lg"
                 />
               )
-            )}
+            )} */}
+            <li className={`mx-4 cursor-pointer my-2 text-lg`}>
+              <a
+                href="https://ethereum.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ethereum
+              </a>
+            </li>
+            <li className={`mx-4 cursor-pointer my-2 text-lg`}>
+              <a
+                href="https://metamask.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Metamask
+              </a>
+            </li>
+            <li className={`mx-4 cursor-pointer my-2 text-lg`}>
+              <a
+                href="https://coinmarketcap.com/currencies/ethereum/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Market
+              </a>
+            </li>
+            <li className={`mx-4 cursor-pointer my-2 text-lg`}>
+              <a
+                href="https://www.youtube.com/playlist?list=PL0cYdJcy1bWtORxf3Fp4QNfUPgBcjn7Lv"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Tutorials
+              </a>
+            </li>
           </ul>
         )}
       </div>
